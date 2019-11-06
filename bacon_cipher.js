@@ -1,29 +1,3 @@
-// 4. Bacon's Cipher
-// Bacon's Cipher tries to hide a word in another message, using the following encoding (B means a letter is capitalized, and A means it is lowercase) Write a decoder for Bacon's Ciper.
-
-// Letter  Encoding:
-// ```
-// A       AAAAA			B       AAAAB		C       AAABA
-// D       AAABB			E       AABAA		F       AABAB
-// G       AABBA			H       AABBB		I       ABAAA
-// J       ABAAB			K       ABABA		L       ABABB
-// M       ABBAA			N       ABBAB		O       ABBBA
-// P       ABBBB			Q       BAAAA		R       BAAAB
-// S       BAABA			T       BAABB		U       BABAA
-// V       BABAB			W       BABBA		X       BABBB
-// Y       BBAAA			Z       BBAAB
-// ```
-
-// Example Input:
-// ```
-// thE QUicK broWn FOx JuMPs OVEr ThE LazY DOgS, gaMbOlINg in TH
-// ```
-
-// Example Output:
-// ```
-// HELLOWORLD
-// ```
-
 var baconCipher = function(msg) {
     var ref = {
         'AAAAA': 'A',
@@ -63,6 +37,8 @@ var baconCipher = function(msg) {
     }
     for (let i = 0; i < myString.length - 5; i = i + 5) {
         let sub = myString.substring(i, i+5);
+        console.log(sub);
+        console.log(ref[sub]);
         answer += ref[sub];
     }
 
